@@ -24,7 +24,7 @@ func DefaultEncoder() zapcore.EncoderConfig {
 }
 
 func DefaultLevel() zap.AtomicLevel {
-	return zap.NewAtomicLevelAt(zapcore.InfoLevel)
+	return zap.NewAtomicLevelAt(zapcore.DebugLevel)
 }
 
 func DefaultSyncer() []zapcore.WriteSyncer {
