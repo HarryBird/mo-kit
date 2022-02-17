@@ -27,7 +27,9 @@ const (
 )
 
 type Config struct {
-	glog.Config
+	SlowThreshold             time.Duration
+	IgnoreRecordNotFoundError bool
+	LogLevel                  glog.LogLevel
 }
 
 func New(l klog.Logger, config Config) glog.Interface {
