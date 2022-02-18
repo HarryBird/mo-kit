@@ -2,7 +2,6 @@ package goredis
 
 import (
 	"errors"
-	"fmt"
 	"strings"
 	"time"
 
@@ -69,7 +68,7 @@ func NewRedis(opts IOption) (*redis.Client, error) {
 		o.MinIdleConns = cast.ToInt(opts.GetMinIdleConns())
 	}
 
-	fmt.Printf("goredis: connect options: %+v", o)
+	// fmt.Printf("goredis: connect options: %+v", o)
 
 	return redis.NewClient(o), nil
 }
