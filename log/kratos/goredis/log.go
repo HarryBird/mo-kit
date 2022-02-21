@@ -6,10 +6,6 @@ import (
 	klog "github.com/go-kratos/kratos/v2/log"
 )
 
-const (
-	infoStr = "%s\n[info] "
-)
-
 type Logger struct {
 	logger *klog.Helper
 }
