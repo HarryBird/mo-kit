@@ -5,13 +5,11 @@ import (
 	"strings"
 	"time"
 
-	rlog "github.com/HarryBird/mo-kit/log/kratos/goredis"
-	klog "github.com/go-kratos/kratos/v2/log"
 	redis "github.com/go-redis/redis/v8"
 	"github.com/spf13/cast"
 )
 
-func NewRedis(opts IOption, l klog.Logger) (*redis.Client, error) {
+func NewRedis(opts IOption) (*redis.Client, error) {
 	if opts.GetAddr() == "" {
 		return nil, errors.New("redis: invalid connection address")
 	}
@@ -72,7 +70,7 @@ func NewRedis(opts IOption, l klog.Logger) (*redis.Client, error) {
 
 	// fmt.Printf("goredis: connect options: %+v", o)
 
-	redis.SetLogger(rlog.New(l))
+	// redis.SetLogger(rlog.New(l))
 
 	return redis.NewClient(o), nil
 }
