@@ -34,7 +34,7 @@ type Config struct {
 
 func New(l klog.Logger, config Config) glog.Interface {
 	return &logger{
-		logger: klog.NewHelper(klog.With(l, "mod", "repo.sql")),
+		logger: klog.NewHelper(klog.With(l, "mod", "repo.db.sql")),
 		Config: config,
 	}
 }
